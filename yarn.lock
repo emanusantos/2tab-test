@@ -5608,10 +5608,9 @@ react-native-codegen@^0.71.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-react-native-extended-stylesheet@^0.12.0:
+react-native-extended-stylesheet@yvbeek/react-native-extended-stylesheet:
   version "0.12.0"
-  resolved "https://registry.yarnpkg.com/react-native-extended-stylesheet/-/react-native-extended-stylesheet-0.12.0.tgz#ebacf22d78a8e2173bdef2a08cbf1acba4dc051f"
-  integrity sha512-y4MEI+a9F8qtAKEjxKbwqotJg1FqKfl6vaiF25ULZ/VGkWI4GNTnsFunU9x6B3XJ6ly1E8O9fybO63u6UazL/A==
+  resolved "https://codeload.github.com/yvbeek/react-native-extended-stylesheet/tar.gz/d20116699ef3fd5f504abe4b04001109fa1e1080"
   dependencies:
     css-mediaquery "^0.1.2"
     object-resolve-path "^1.1.0"
