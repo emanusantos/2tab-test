@@ -17,8 +17,9 @@ export const PressableSmallerView: React.FC = () => {
 
   return (
     <>
-      <TouchableOpacity onPress={handleOpen} style={styles.scrollableChild}>
-        <View
+      <View style={styles.scrollableChild}>
+        <TouchableOpacity
+          onPress={handleOpen}
           style={{
             backgroundColor: "#777",
             height: "100%",
@@ -29,7 +30,8 @@ export const PressableSmallerView: React.FC = () => {
 
         <View style={{ width: "100%", marginTop: EStyleSheet.value(10) }}>
           {Array.from(Array(3).keys()).map((_, index) => (
-            <View
+            <TouchableOpacity
+              onPress={handleOpen}
               key={`smaller-view-${index}`}
               style={{
                 backgroundColor: "#777",
@@ -42,7 +44,7 @@ export const PressableSmallerView: React.FC = () => {
             />
           ))}
         </View>
-      </TouchableOpacity>
+      </View>
 
       <VideoModal isVisible={isVisible} onRequestClose={handleClose} />
     </>
