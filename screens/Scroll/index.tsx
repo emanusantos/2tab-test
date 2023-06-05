@@ -3,11 +3,11 @@ import React from "react";
 import { ScrollView, Text } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
+import EStyleSheet from "react-native-extended-stylesheet";
 
 import { Scrollables, TopBar } from "./components";
 
 import styles from "./styles";
-import EStyleSheet from "react-native-extended-stylesheet";
 
 export const Scroll: React.FC = () => {
   return (
