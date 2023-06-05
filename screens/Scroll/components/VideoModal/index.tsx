@@ -4,6 +4,7 @@ import { Modal, Text, TouchableOpacity, View } from "react-native";
 import EStyleSheet from "react-native-extended-stylesheet";
 
 import { Video, ResizeMode } from "expo-av";
+import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 
 import styles from "./styles";
@@ -19,6 +20,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
 }) => {
   return (
     <Modal visible={isVisible} animationType="fade">
+      <StatusBar backgroundColor="#171717" />
       <View
         style={{
           flex: 1,

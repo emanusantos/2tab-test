@@ -5,6 +5,8 @@ import { ScrollView, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EStyleSheet from "react-native-extended-stylesheet";
 
+import { StatusBar } from "expo-status-bar";
+
 import { Scrollables, TopBar } from "./components";
 
 import styles from "./styles";
@@ -12,6 +14,7 @@ import styles from "./styles";
 export const Scroll: React.FC = () => {
   return (
     <SafeAreaView>
+      <StatusBar backgroundColor="#777" />
       <TopBar />
 
       <ScrollView
