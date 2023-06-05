@@ -7,7 +7,7 @@ import { Ionicons } from "@expo/vector-icons";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 
-export const TopBar = () => {
+export const TopBar: React.FC = () => {
   return (
     <View style={styles.wrapper}>
       <View style={[styles.row, { justifyContent: "space-between" }]}>
