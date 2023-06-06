@@ -18,6 +18,8 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   isVisible,
   onRequestClose,
 }) => {
+  const videoRef = React.useRef<Video>(null);
+
   return (
     <Modal visible={isVisible} animationType="fade">
       <StatusBar backgroundColor="#171717" />
@@ -41,7 +43,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({
 
         <View style={styles.viewVideo}>
           <Video
+            ref={videoRef}
             resizeMode={ResizeMode.COVER}
+            onLoad={() => videoRef.current?.playAsync()}
             source={{
               uri: "https://videokits-apps.s3-us-west-1.amazonaws.com/riza/usrHoJb5oxGmfytFgabwwyO/Video/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.mov/HLS/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.m3u8",
             }}
