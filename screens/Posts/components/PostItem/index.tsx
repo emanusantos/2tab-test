@@ -9,6 +9,8 @@ import { useNavigation } from "@react-navigation/native";
 
 import { PostListScreenNavigator } from "../../types";
 
+import styles from "./styles";
+
 interface PostItemProps {
   fullName: string;
   dateCreated: string;
@@ -44,14 +46,8 @@ const PostItem: React.FC<PostItemProps> = ({
 
   return (
     <Pressable onPress={handlePress}>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <View style={styles.postHeaderContainer}>
+        <View style={styles.titleAndAvatarContainer}>
           <Ionicons
             name="person-circle-outline"
             size={40}
@@ -70,31 +66,11 @@ const PostItem: React.FC<PostItemProps> = ({
         />
       </View>
       {fileUrl ? (
-        <Image
-          source={{ uri: fileUrl }}
-          style={{
-            width: "100%",
-            height: EStyleSheet.value("20rem"),
-          }}
-        />
+        <Image source={{ uri: fileUrl }} style={styles.postImage} />
       ) : null}
 
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginHorizontal: EStyleSheet.value(5),
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            gap: EStyleSheet.value(10),
-            marginVertical: EStyleSheet.value(5),
-          }}
-        >
+      <View style={styles.iconsRowContainer}>
+        <View style={styles.iconsRow}>
           <Ionicons
             name="heart-outline"
             size={30}
