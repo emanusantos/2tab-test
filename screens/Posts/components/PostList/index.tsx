@@ -13,6 +13,7 @@ export const PostList: React.FC = () => {
 
   return (
     <FlatList
+      contentContainerStyle={{ paddingBottom: EStyleSheet.value("5rem") }}
       data={posts}
       keyExtractor={({ Post }) => Post.PostId}
       renderItem={({ item }) => (
@@ -27,6 +28,7 @@ export const PostList: React.FC = () => {
       ItemSeparatorComponent={() => (
         <View style={{ marginBottom: EStyleSheet.value("1rem") }} />
       )}
+      showsVerticalScrollIndicator={false}
     />
   );
 };

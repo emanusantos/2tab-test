@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 import { Posts, Scroll } from "../screens";
+import PostsStack from "./PostsStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +32,7 @@ export default function Routes() {
         />
         <Tab.Screen
           name="Posts"
-          component={Posts}
+          component={PostsStack}
           options={{
             tabBarIcon: ({ focused }) => (
               <Ionicons
