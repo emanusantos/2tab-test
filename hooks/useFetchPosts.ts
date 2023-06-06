@@ -29,7 +29,7 @@ export const useFetchPosts = () => {
   }, []);
 
   return {
-    posts,
+    posts: posts?.payload.Posts,
     isLoading,
   };
 };
