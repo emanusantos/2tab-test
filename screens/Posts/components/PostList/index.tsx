@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FlatList, View } from "react-native";
+import { ActivityIndicator, FlatList, View } from "react-native";
 
 import { useFetchPosts } from "../../../../hooks/useFetchPosts";
 
@@ -9,7 +9,7 @@ import PostItem from "../PostItem";
 import styles from "./styles";
 
 export const PostList: React.FC = () => {
-  const { posts } = useFetchPosts();
+  const { posts, isLoading } = useFetchPosts();
 
   return (
     <FlatList
@@ -27,6 +27,9 @@ export const PostList: React.FC = () => {
       )}
       ItemSeparatorComponent={() => <View style={styles.separator} />}
       showsVerticalScrollIndicator={false}
+      ListEmptyComponent={() =>
+        isLoading ? <ActivityIndicator style={styles.activity} /> : null
+      }
     />
   );
 };
