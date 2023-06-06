@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import { View, Text } from 'react-native';
+import { View, Text } from "react-native";
+
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { PostList } from "./components";
 
 export const Posts: React.FC = () => {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Posts!</Text>
-      </View>
-    )
-}
+  return (
+    <SafeAreaView>
+      <PostList />
+    </SafeAreaView>
+  );
+};
