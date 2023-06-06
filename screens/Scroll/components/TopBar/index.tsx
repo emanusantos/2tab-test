@@ -18,7 +18,7 @@ export const TopBar: React.FC = () => {
           />
           <View>
             <Text style={styles.smallText}>Hi!</Text>
-            <Text>Maicon</Text>
+            <Text>User</Text>
           </View>
         </View>
         <View style={[styles.row, { gap: 15 }]}>

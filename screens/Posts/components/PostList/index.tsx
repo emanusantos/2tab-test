@@ -2,18 +2,18 @@ import React from "react";
 
 import { FlatList, View } from "react-native";
 
-import EStyleSheet from "react-native-extended-stylesheet";
-
 import { useFetchPosts } from "../../../../hooks/useFetchPosts";
 
 import PostItem from "../PostItem";
+
+import styles from "./styles";
 
 export const PostList: React.FC = () => {
   const { posts } = useFetchPosts();
 
   return (
     <FlatList
-      contentContainerStyle={{ paddingBottom: EStyleSheet.value("5rem") }}
+      contentContainerStyle={styles.contentContainer}
       data={posts}
       keyExtractor={({ Post }) => Post.PostId}
       renderItem={({ item }) => (
@@ -25,9 +25,7 @@ export const PostList: React.FC = () => {
           fileUrl={item.Files.FileTop?.FileURL}
         />
       )}
-      ItemSeparatorComponent={() => (
-        <View style={{ marginBottom: EStyleSheet.value("1rem") }} />
-      )}
+      ItemSeparatorComponent={() => <View style={styles.separator} />}
       showsVerticalScrollIndicator={false}
     />
   );
