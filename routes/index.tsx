@@ -1,9 +1,12 @@
+import { Platform, StatusBar } from "react-native";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Ionicons } from "@expo/vector-icons";
 
-import { Posts, Scroll } from "../screens";
+import { Scroll } from "../screens";
+
 import PostsStack from "./PostsStack";
 
 const Tab = createBottomTabNavigator();
@@ -27,8 +30,15 @@ export default function Routes() {
                 color={focused ? "#1AA7EC" : undefined}
               />
             ),
+
             tabBarShowLabel: false,
           }}
+          listeners={() => ({
+            tabPress: () => {
+              if (Platform.OS === "android")
+                StatusBar.setBackgroundColor("#777");
+            },
+          })}
         />
         <Tab.Screen
           name="Posts"
@@ -43,6 +53,12 @@ export default function Routes() {
             ),
             tabBarShowLabel: false,
           }}
+          listeners={() => ({
+            tabPress: () => {
+              if (Platform.OS === "android")
+                StatusBar.setBackgroundColor("#F1F1F1");
+            },
+          })}
         />
       </Tab.Navigator>
     </NavigationContainer>
