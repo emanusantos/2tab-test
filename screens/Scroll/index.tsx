@@ -10,7 +10,7 @@ import styles from "./styles";
 
 export const Scroll: React.FC = () => {
   return (
-    <View style={{ flex: 1, backgroundColor: "#F1F1F1" }}>
+    <View style={styles.wrapper}>
       <CustomStatusBar backgroundColor="#777" />
       <TopBar />
 

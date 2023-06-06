@@ -7,17 +7,9 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import { PostListScreenNavigator } from "../../types";
+import { PostItemProps, PostListScreenNavigator } from "./types";
 
 import styles from "./styles";
-
-interface PostItemProps {
-  fullName: string;
-  dateCreated: string;
-  title: string;
-  description: string;
-  fileUrl?: string;
-}
 
 const PostItem: React.FC<PostItemProps> = ({
   fullName,

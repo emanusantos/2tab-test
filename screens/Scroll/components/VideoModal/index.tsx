@@ -6,12 +6,9 @@ import { Video, ResizeMode } from "expo-av";
 import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 
-import styles from "./styles";
+import { VideoModalProps } from "./types";
 
-interface VideoModalProps {
-  isVisible: boolean;
-  onRequestClose: () => void;
-}
+import styles from "./styles";
 
 const VIDEO_URL =
   "https://videokits-apps.s3-us-west-1.amazonaws.com/riza/usrHoJb5oxGmfytFgabwwyO/Video/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.mov/HLS/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.m3u8";
