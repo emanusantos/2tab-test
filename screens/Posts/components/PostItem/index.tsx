@@ -1,10 +1,11 @@
 import React from "react";
 
-import { Image, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 
 import EStyleSheet from "react-native-extended-stylesheet";
 
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 interface PostItemProps {
   fullName: string;
@@ -21,6 +22,8 @@ const PostItem: React.FC<PostItemProps> = ({
   description,
   fileUrl,
 }) => {
+  const { navigate } = useNavigation();
+
   const calculateDaysAgo = () => {
     const [month, day, year] = dateCreated.slice(0, 10).split("/");
 
@@ -33,8 +36,12 @@ const PostItem: React.FC<PostItemProps> = ({
     return `${differenceInDays} days ago`;
   };
 
+  const handlePress = () => {
+    navigate("ViewPost");
+  };
+
   return (
-    <View>
+    <Pressable onPress={handlePress}>
       <View
         style={{
           flexDirection: "row",
@@ -120,7 +127,7 @@ const PostItem: React.FC<PostItemProps> = ({
       >
         <Text style={{ fontWeight: "bold" }}>{fullName}</Text> {description}
       </Text>
-    </View>
+    </Pressable>
   );
 };
 

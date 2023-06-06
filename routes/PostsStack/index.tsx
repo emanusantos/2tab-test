@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { Posts } from "../../screens";
+import { Posts, ViewPost } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -11,6 +11,7 @@ export default function PostsStack() {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="PostList" component={Posts} />
+      <Stack.Screen name="ViewPost" component={ViewPost} />
     </Stack.Navigator>
   );
 }
