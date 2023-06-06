@@ -2,8 +2,6 @@ import React from "react";
 
 import { Image, Pressable, Text, View } from "react-native";
 
-import EStyleSheet from "react-native-extended-stylesheet";
-
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
@@ -43,7 +41,7 @@ const PostItem: React.FC<PostItemProps> = ({
           <Ionicons
             name="person-circle-outline"
             size={40}
-            style={{ marginRight: EStyleSheet.value(5) }}
+            style={{ marginRight: 5 }}
           />
           <View>
             <Text>{title}</Text>
@@ -54,7 +52,7 @@ const PostItem: React.FC<PostItemProps> = ({
         <Ionicons
           name="ellipsis-horizontal-outline"
           size={20}
-          style={{ marginRight: EStyleSheet.value(5) }}
+          style={{ marginRight: 5 }}
         />
       </View>
       {fileUrl ? (
@@ -63,36 +61,32 @@ const PostItem: React.FC<PostItemProps> = ({
 
       <View style={styles.iconsRowContainer}>
         <View style={styles.iconsRow}>
-          <Ionicons
-            name="heart-outline"
-            size={30}
-            style={{ marginRight: EStyleSheet.value(5) }}
-          />
+          <Ionicons name="heart-outline" size={30} style={{ marginRight: 5 }} />
 
           <Ionicons
             name="chatbubble-outline"
             size={25}
-            style={{ marginRight: EStyleSheet.value(5) }}
+            style={{ marginRight: 5 }}
           />
 
           <Ionicons
             name="share-social-outline"
             size={28}
-            style={{ marginRight: EStyleSheet.value(5) }}
+            style={{ marginRight: 5 }}
           />
         </View>
 
         <Ionicons
           name="bookmark-outline"
           size={25}
-          style={{ marginRight: EStyleSheet.value(5) }}
+          style={{ marginRight: 5 }}
         />
       </View>
 
       <Text
         style={{
-          marginHorizontal: EStyleSheet.value(5),
-          marginBottom: EStyleSheet.value(10),
+          marginHorizontal: 5,
+          marginBottom: 10,
         }}
       >
         <Text style={{ fontWeight: "bold" }}>{fullName}</Text> {description}
