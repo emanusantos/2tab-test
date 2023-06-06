@@ -5,7 +5,6 @@ import { View, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import styles from "./styles";
-import EStyleSheet from "react-native-extended-stylesheet";
 
 export const TopBar: React.FC = () => {
   return (
@@ -15,15 +14,14 @@ export const TopBar: React.FC = () => {
           <Ionicons
             name="person-circle-outline"
             size={40}
-            style={{ marginRight: EStyleSheet.value(5) }}
+            style={styles.personIcon}
           />
           <View>
-            <Text style={{ fontSize: EStyleSheet.value(10) }}>Hi!</Text>
+            <Text style={styles.smallText}>Hi!</Text>
             <Text>Maicon</Text>
           </View>
         </View>
-
-        <View style={[styles.row, { gap: EStyleSheet.value(15) }]}>
+        <View style={[styles.row, { gap: 15 }]}>
           <Ionicons name="search" size={25} />
           <Ionicons name="notifications" size={25} />
         </View>

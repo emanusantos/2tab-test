@@ -2,11 +2,9 @@ import React from "react";
 
 import { TouchableOpacity, View } from "react-native";
 
-import EStyleSheet from "react-native-extended-stylesheet";
-
 import { VideoModal } from "../VideoModal";
 
-import styles from "../Scrollables/styles";
+import styles from "./styles";
 
 export const PressableSmallerView: React.FC = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -18,29 +16,14 @@ export const PressableSmallerView: React.FC = () => {
   return (
     <>
       <View style={styles.scrollableChild}>
-        <TouchableOpacity
-          onPress={handleOpen}
-          style={{
-            backgroundColor: "#777",
-            height: "100%",
-            width: "45%",
-            borderRadius: 15,
-          }}
-        />
+        <TouchableOpacity onPress={handleOpen} style={styles.leftChild} />
 
-        <View style={{ width: "100%", marginTop: EStyleSheet.value(10) }}>
+        <View style={styles.smallerViewsContainer}>
           {Array.from(Array(3).keys()).map((_, index) => (
             <TouchableOpacity
               onPress={handleOpen}
               key={`smaller-view-${index}`}
-              style={{
-                backgroundColor: "#777",
-                height: EStyleSheet.value(10),
-                width: "40%",
-                borderRadius: 15,
-                marginLeft: EStyleSheet.value(15),
-                marginBottom: EStyleSheet.value(10),
-              }}
+              style={styles.smallerView}
             />
           ))}
         </View>

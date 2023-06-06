@@ -13,6 +13,8 @@ const styles = EStyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
+  personIcon: { marginRight: 5 },
+  smallText: { fontSize: 10 },
 });
 
 export default styles;

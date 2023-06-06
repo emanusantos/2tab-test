@@ -1,11 +1,10 @@
 import React from "react";
 
-import { Pressable, ScrollView, View } from "react-native";
+import { ScrollView } from "react-native";
 
-import EStyleSheet from "react-native-extended-stylesheet";
+import { PressableSmallerView } from "../PressableSmallerView";
 
 import styles from "./styles";
-import { PressableSmallerView } from "../PressableSmallerView";
 
 export const Scrollables: React.FC = () => {
   return (
@@ -13,11 +12,7 @@ export const Scrollables: React.FC = () => {
       {Array.from(Array(5).keys()).map((_, index) => (
         <ScrollView
           key={`horizontal-scrollview-${index}`}
-          contentContainerStyle={{
-            width: "auto",
-            height: EStyleSheet.value(160),
-            marginBottom: EStyleSheet.value(25),
-          }}
+          contentContainerStyle={styles.scrollView}
           showsHorizontalScrollIndicator={false}
           horizontal
         >

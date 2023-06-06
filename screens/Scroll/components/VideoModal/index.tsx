@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Modal, Text, TouchableOpacity, View } from "react-native";
-import EStyleSheet from "react-native-extended-stylesheet";
+import { Modal, TouchableOpacity, View } from "react-native";
 
 import { Video, ResizeMode } from "expo-av";
 import { StatusBar } from "expo-status-bar";
@@ -14,6 +13,9 @@ interface VideoModalProps {
   onRequestClose: () => void;
 }
 
+const VIDEO_URL =
+  "https://videokits-apps.s3-us-west-1.amazonaws.com/riza/usrHoJb5oxGmfytFgabwwyO/Video/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.mov/HLS/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.m3u8";
+
 export const VideoModal: React.FC<VideoModalProps> = ({
   isVisible,
   onRequestClose,
@@ -23,20 +25,12 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   return (
     <Modal visible={isVisible} animationType="fade">
       <StatusBar backgroundColor="#171717" />
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "#171717",
-        }}
-      >
+      <View style={styles.wrapper}>
         <TouchableOpacity onPress={onRequestClose}>
           <Ionicons
             name="close"
             size={30}
-            style={{
-              paddingVertical: EStyleSheet.value(48),
-              paddingHorizontal: EStyleSheet.value(28),
-            }}
+            style={styles.closeIcon}
             color="white"
           />
         </TouchableOpacity>
@@ -47,7 +41,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             resizeMode={ResizeMode.COVER}
             onLoad={() => videoRef.current?.playAsync()}
             source={{
-              uri: "https://videokits-apps.s3-us-west-1.amazonaws.com/riza/usrHoJb5oxGmfytFgabwwyO/Video/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.mov/HLS/fiAoW59l6J54or7NY3vax3kV2gGRv1Xtj.m3u8",
+              uri: VIDEO_URL,
             }}
             style={styles.video}
             useNativeControls

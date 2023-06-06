@@ -1,7 +1,8 @@
 import EStyleSheet from "react-native-extended-stylesheet";
 
 const styles = EStyleSheet.create({
-  container: {
+  contentContainer: {
+    paddingBottom: "6rem",
     paddingLeft: "2rem",
   },
   welcome: {
