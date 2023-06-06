@@ -1,5 +1,7 @@
 import { StyleSheet, useWindowDimensions } from "react-native";
+
 import EStyleSheet from "react-native-extended-stylesheet";
+
 import Routes from "./routes";
 
 export default function App() {

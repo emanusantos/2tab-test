@@ -4,7 +4,7 @@ const styles = EStyleSheet.create({
   viewVideo: {
     width: "100%",
     height: "60%",
-    marginTop: "20%",
+    marginTop: "10%",
   },
   video: {
     flex: 1,

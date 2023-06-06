@@ -25,7 +25,7 @@ export const ViewPost: React.FC<ViewPostProps> = ({ navigation, route }) => {
 
       <Image
         source={{ uri: url }}
-        style={{ width: "100%", height: EStyleSheet.value("30rem") }}
+        style={{ width: "100%", height: EStyleSheet.value("35rem") }}
       />
     </SafeAreaView>
   );

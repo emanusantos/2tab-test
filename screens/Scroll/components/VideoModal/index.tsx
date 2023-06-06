@@ -32,7 +32,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             name="close"
             size={30}
             style={{
-              paddingVertical: EStyleSheet.value(28),
+              paddingVertical: EStyleSheet.value(48),
               paddingHorizontal: EStyleSheet.value(28),
             }}
             color="white"
