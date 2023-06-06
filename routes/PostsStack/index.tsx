@@ -2,7 +2,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { Posts, ViewPost } from "../../screens";
 
-const Stack = createNativeStackNavigator();
+export type PostsStackParams = {
+  PostList: undefined;
+  ViewPost: { url: string };
+};
+
+const Stack = createNativeStackNavigator<PostsStackParams>();
 
 export default function PostsStack() {
   return (

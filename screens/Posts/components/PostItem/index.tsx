@@ -7,6 +7,8 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
+import { PostListScreenNavigator } from "../../types";
+
 interface PostItemProps {
   fullName: string;
   dateCreated: string;
@@ -22,7 +24,7 @@ const PostItem: React.FC<PostItemProps> = ({
   description,
   fileUrl,
 }) => {
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation<PostListScreenNavigator>();
 
   const calculateDaysAgo = () => {
     const [month, day, year] = dateCreated.slice(0, 10).split("/");
@@ -37,7 +39,7 @@ const PostItem: React.FC<PostItemProps> = ({
   };
 
   const handlePress = () => {
-    navigate("ViewPost");
+    if (fileUrl) navigate("ViewPost", { url: fileUrl });
   };
 
   return (
